@@ -1,0 +1,16 @@
+services:
+  postgres:
+    build:
+      context: ./postgres/
+      dockerfile: Dockerfile
+    image: postgres
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=alice
+      - POSTGRES_PASSWORD=bob
+      - POSTGRES_DB=example
+      - TZ=Asia/Tokyo
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
