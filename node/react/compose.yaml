@@ -1,0 +1,17 @@
+services:
+  frontend:
+    container_name: react-container
+    image: react-image
+    build:
+      context: ./project-name
+      dockerfile: Dockerfile
+      args:
+        - NODE_TAG=18.16-slim
+        - APP_HOME=app
+    environment:
+      - NODE_ENV='development'
+      - TZ=Asia/Tokyo
+    ports:
+      - 3000:3000
+    restart: always
+    tty: true

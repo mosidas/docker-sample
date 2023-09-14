@@ -1,0 +1,16 @@
+services:
+  aspnet:
+    container_name: aspnet-container
+    build:
+      context: ./solution-name
+      dockerfile: Dockerfile
+      args:
+        - DOTNET_TAG=6.0
+    image: aspnet-image
+    ports:
+      - "80:80"
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - TZ=Asia/Tokyo
+      - ConnectionStrings__Default=Server=sql-server;Database=database-name;User Id=sa;Password=Password123;
+    restart: always

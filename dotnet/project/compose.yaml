@@ -1,0 +1,10 @@
+services:
+  dotnet:
+    container_name: dotnet-container
+    build:
+      context: ./ProjectName
+      dockerfile: Dockerfile
+    image: dotnet-image
+    environment:
+      - TZ=Asia/Tokyo
+    restart: always
