@@ -1,1 +1,1 @@
-insert into sample (name) values ('hoge'),('fuga') returning id;
+INSERT INTO sample (name) VALUES ('hoge'),('fuga') RETURNING id;
