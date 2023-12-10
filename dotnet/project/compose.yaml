@@ -7,4 +7,9 @@ services:
     image: dotnet-image
     environment:
       - TZ=Asia/Tokyo
+    # https setting
+    #   - ASPNETCOE_Kestrel__Certificates__Default__Password=Password
+    #   - ASPNETCOE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    # volumes:
+    #   - ./ProjectName/https:/https/ # bind the certificate directory
     restart: always

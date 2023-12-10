@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: react-container
+    image: react-image
+    build:
+      context: ./project-name
+      dockerfile: Dockerfile
+      args:
+        - NODE_TAG=18.16-slim
+        - APP_HOME=app
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - 80:80
+    restart: always
+    tty: true
