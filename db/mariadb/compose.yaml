@@ -14,7 +14,10 @@ services:
       MYSQL_PASSWORD: example_pass
       TZ: Asia/Tokyo
     volumes:
+      - mydb-data:/var/lib/mysql
       - ./init:/docker-entrypoint-initdb.d
       - ./my.cnf:/etc/mysql/conf.d/my.cnf
     restart: always
 
+volumes:
+  mydb-data:

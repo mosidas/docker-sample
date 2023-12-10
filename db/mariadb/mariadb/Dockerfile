@@ -1,5 +1,5 @@
 FROM mariadb:latest
 
-COPY ./init.sql /docker-entrypoint-initdb.d/
+COPY ./init/init.sql /docker-entrypoint-initdb.d/
 
 VOLUME [ "/var/lib/mysql" ]
