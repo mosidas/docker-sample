@@ -1,0 +1,17 @@
+services:
+  mongo:
+    container_name: mongodb
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - my-db:/data/db
+
+volumes:
+  my-db:
